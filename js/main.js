@@ -108,19 +108,19 @@ function showWelcomeBanner() {
   var greeting, icon;
 
   if (hour < 5) {
-    greeting = "Still up? The atolls are quiet and starlit at this hour.";
+    greeting = "Welcome to Atoll Journal — the atolls are quiet and starlit at this hour.";
     icon = "\u{1F319}"; // crescent moon
   } else if (hour < 12) {
-    greeting = "Good morning, wanderer — the lagoon is glass-calm right now.";
+    greeting = "Welcome to Atoll Journal — the lagoon is glass-calm this morning.";
     icon = "\u{1F305}"; // sunrise
   } else if (hour < 17) {
-    greeting = "Good afternoon — the light over the reef is perfect for exploring.";
+    greeting = "Welcome to Atoll Journal — the light over the reef is perfect right now.";
     icon = "☀️"; // sun
   } else if (hour < 21) {
-    greeting = "Good evening — the sky above the reef is turning gold.";
+    greeting = "Welcome to Atoll Journal — the sky over the reef is turning gold.";
     icon = "\u{1F307}"; // sunset
   } else {
-    greeting = "Good night — the tide is out, and so are the stars.";
+    greeting = "Welcome to Atoll Journal — the tide is out, and so are the stars.";
     icon = "\u{1F30C}"; // milky way
   }
 
