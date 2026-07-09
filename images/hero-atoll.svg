@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Illustrated map of a Maldivian atoll, with a ring reef, small islands and a suggested boat route">
+  <defs>
+    <radialGradient id="ocean" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#12766c"/>
+      <stop offset="55%" stop-color="#0e5c53"/>
+      <stop offset="100%" stop-color="#0a3f3a"/>
+    </radialGradient>
+    <radialGradient id="lagoon" cx="45%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#7fd8c8"/>
+      <stop offset="100%" stop-color="#2e9187"/>
+    </radialGradient>
+    <radialGradient id="sunglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f3d9a4" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f3d9a4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- ocean backdrop -->
+  <circle cx="300" cy="300" r="290" fill="url(#ocean)"/>
+
+  <!-- sun glow -->
+  <circle cx="470" cy="105" r="120" fill="url(#sunglow)" filter="url(#soft)"/>
+
+  <!-- depth contour rings -->
+  <g fill="none" stroke="#f6f1e6" stroke-opacity="0.12">
+    <circle cx="300" cy="300" r="255"/>
+    <circle cx="300" cy="300" r="225"/>
+  </g>
+
+  <!-- reef ring (sand flats) -->
+  <circle cx="300" cy="300" r="190" fill="#e7d9ad" opacity="0.9"/>
+  <!-- lagoon -->
+  <circle cx="300" cy="300" r="152" fill="url(#lagoon)"/>
+  <!-- lagoon shimmer lines -->
+  <g stroke="#f6f1e6" stroke-opacity="0.25" stroke-width="2" fill="none">
+    <path d="M190,260 Q300,235 410,260"/>
+    <path d="M200,310 Q300,290 400,310"/>
+    <path d="M215,355 Q300,338 385,355"/>
+  </g>
+
+  <!-- suggested voyage route (signature motif) -->
+  <g fill="none" stroke="#c69a52" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 12">
+    <path d="M459.7,358.1 C 420,430 340,460 285.2,469.4"/>
+    <path d="M285.2,469.4 C 220,455 165,425 152.8,385"/>
+    <path d="M152.8,215 C 150,170 220,138 314.8,130.6"/>
+  </g>
+
+  <!-- small boat on the route -->
+  <g transform="translate(360,435) rotate(18)">
+    <path d="M-12,4 L12,4 L7,11 L-7,11 Z" fill="#12211d"/>
+    <rect x="-1.4" y="-10" width="2.8" height="14" fill="#12211d"/>
+    <path d="M0,-9 L11,3 L0,3 Z" fill="#f6f1e6"/>
+  </g>
+
+  <!-- islands, each with a couple of palms -->
+  <g id="islands">
+    <!-- island 1 -->
+    <g transform="translate(459.7,358.1)">
+      <ellipse rx="17" ry="11" fill="#f3e7c4"/>
+      <ellipse rx="10" ry="6" fill="#3f7d54" transform="translate(-2,-2)"/>
+      <circle cx="6" cy="-7" r="2.4" fill="#2b5c3d"/>
+      <circle cx="10" cy="-3" r="2" fill="#2b5c3d"/>
+    </g>
+    <!-- island 2 -->
+    <g transform="translate(285.2,469.4)">
+      <ellipse rx="20" ry="12" fill="#f3e7c4"/>
+      <ellipse rx="12" ry="7" fill="#3f7d54" transform="translate(2,-2)"/>
+      <rect x="-3" y="-16" width="2.4" height="10" fill="#8a6a3a"/>
+      <path d="M-3,-16 Q-10,-20 -14,-13" stroke="#3f7d54" stroke-width="2.4" fill="none"/>
+      <path d="M-2,-16 Q4,-21 9,-14" stroke="#3f7d54" stroke-width="2.4" fill="none"/>
+      <circle cx="10" cy="-6" r="2" fill="#2b5c3d"/>
+    </g>
+    <!-- island 3 -->
+    <g transform="translate(152.8,385)">
+      <ellipse rx="15" ry="9.5" fill="#f3e7c4"/>
+      <ellipse rx="9" ry="5.5" fill="#3f7d54" transform="translate(-1,-1)"/>
+      <circle cx="4" cy="-6" r="2" fill="#2b5c3d"/>
+    </g>
+    <!-- island 4 -->
+    <g transform="translate(152.8,215)">
+      <ellipse rx="14" ry="9" fill="#f3e7c4"/>
+      <ellipse rx="8" ry="5" fill="#3f7d54"/>
+      <circle cx="-3" cy="-6" r="1.8" fill="#2b5c3d"/>
+    </g>
+    <!-- island 5 (resort island, slightly larger with huts) -->
+    <g transform="translate(314.8,130.6)">
+      <ellipse rx="22" ry="13" fill="#f3e7c4"/>
+      <ellipse rx="13" ry="7.5" fill="#3f7d54" transform="translate(-4,-2)"/>
+      <!-- overwater huts on stilts, jetty -->
+      <path d="M14,4 L34,-2" stroke="#8a6a3a" stroke-width="2" fill="none"/>
+      <g transform="translate(32,-4)"><rect x="-4" y="-5" width="8" height="5" fill="#f6f1e6"/><path d="M-5,-5 L0,-10 L5,-5 Z" fill="#0a3f3a"/></g>
+      <g transform="translate(24,-1)"><rect x="-3.5" y="-4.5" width="7" height="4.5" fill="#f6f1e6"/><path d="M-4.5,-4.5 L0,-9 L4.5,-4.5 Z" fill="#0a3f3a"/></g>
+      <circle cx="4" cy="-7" r="2.2" fill="#2b5c3d"/>
+    </g>
+    <!-- island 6 -->
+    <g transform="translate(447.2,215)">
+      <ellipse rx="15" ry="9.5" fill="#f3e7c4"/>
+      <ellipse rx="9" ry="5.5" fill="#3f7d54" transform="translate(2,-1)"/>
+      <circle cx="-4" cy="-6" r="2" fill="#2b5c3d"/>
+    </g>
+  </g>
+
+  <!-- manta ray silhouette drifting in open water -->
+  <g transform="translate(120,470) rotate(-12)" fill="#0a3f3a" opacity="0.55">
+    <path d="M0,0 C -22,-14 -46,-10 -58,4 C -40,4 -22,10 0,0 C 22,10 40,4 58,4 C 46,-10 22,-14 0,0 Z"/>
+    <path d="M0,2 C 4,14 3,26 0,34" stroke="#0a3f3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- fish chevrons -->
+  <g stroke="#f6f1e6" stroke-opacity="0.5" stroke-width="2.4" fill="none" stroke-linecap="round">
+    <path d="M60,150 l8,5 l-8,5"/>
+    <path d="M75,158 l8,5 l-8,5"/>
+    <path d="M520,330 l7,4 l-7,4"/>
+    <path d="M533,336 l7,4 l-7,4"/>
+  </g>
+
+  <!-- compass rose -->
+  <g transform="translate(84,84)">
+    <circle r="30" fill="#0a3f3a" stroke="#c69a52" stroke-width="1.5"/>
+    <g stroke="#f6f1e6" stroke-width="1.4">
+      <line x1="0" y1="-24" x2="0" y2="-14"/>
+      <line x1="0" y1="24" x2="0" y2="14"/>
+      <line x1="-24" y1="0" x2="-14" y2="0"/>
+      <line x1="24" y1="0" x2="14" y2="0"/>
+    </g>
+    <path d="M0,-16 L5,0 L0,16 L-5,0 Z" fill="#c69a52"/>
+    <text x="0" y="-30" text-anchor="middle" font-size="9" fill="#f6f1e6" font-family="Georgia, serif">N</text>
+  </g>
+</svg>
