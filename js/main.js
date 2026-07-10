@@ -2,6 +2,7 @@
 // Khalid Makki, Student ID 24229027
 
 document.addEventListener("DOMContentLoaded", function () {
+  initWelcomeGate();
   initHeaderScroll();
   initNavToggle();
   initScrollReveal();
@@ -9,6 +10,42 @@ document.addEventListener("DOMContentLoaded", function () {
   showWelcomeBanner();
   initTripPlanner();
 });
+
+// name-gate: handles the form on welcome.html, and sends first-time
+// visitors on index.html there before they see the homepage
+function initWelcomeGate() {
+  var gateForm = document.getElementById("welcome-gate-form");
+
+  if (gateForm) {
+    gateForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var nameInput = document.getElementById("visitor-name");
+      var name = nameInput ? nameInput.value.trim() : "";
+      if (name) {
+        localStorage.setItem("atollVisitorName", name);
+      }
+      localStorage.setItem("atollHasEntered", "yes");
+      window.location.href = "index.html";
+    });
+
+    var skipLink = document.getElementById("welcome-skip");
+    if (skipLink) {
+      skipLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        localStorage.removeItem("atollVisitorName");
+        localStorage.setItem("atollHasEntered", "yes");
+        window.location.href = "index.html";
+      });
+    }
+    return;
+  }
+
+  // only the homepage checks whether a visitor has already been through the gate
+  var isHomepage = document.getElementById("welcome-banner");
+  if (isHomepage && !localStorage.getItem("atollHasEntered")) {
+    window.location.href = "welcome.html";
+  }
+}
 
 // adds a shadow/background to the header once you've scrolled past it
 function initHeaderScroll() {
@@ -82,24 +119,28 @@ function showWelcomeBanner() {
   if (!banner) return;
 
   var hour = new Date().getHours();
-  var greeting, icon;
+  var mood, icon;
 
   if (hour < 5) {
-    greeting = "Welcome to Atoll Journal — the atolls are quiet and starlit at this hour.";
+    mood = "the atolls are quiet and starlit at this hour.";
     icon = "\u{1F319}";
   } else if (hour < 12) {
-    greeting = "Welcome to Atoll Journal — the lagoon is glass-calm this morning.";
+    mood = "the lagoon is glass-calm this morning.";
     icon = "\u{1F305}";
   } else if (hour < 17) {
-    greeting = "Welcome to Atoll Journal — the light over the reef is perfect right now.";
+    mood = "the light over the reef is perfect right now.";
     icon = "☀️";
   } else if (hour < 21) {
-    greeting = "Welcome to Atoll Journal — the sky over the reef is turning gold.";
+    mood = "the sky over the reef is turning gold.";
     icon = "\u{1F307}";
   } else {
-    greeting = "Welcome to Atoll Journal — the tide is out, and so are the stars.";
+    mood = "the tide is out, and so are the stars.";
     icon = "\u{1F30C}";
   }
+
+  var visitorName = localStorage.getItem("atollVisitorName");
+  var lead = visitorName ? "Welcome, " + visitorName + ", to Atoll Journal" : "Welcome to Atoll Journal";
+  var greeting = lead + " — " + mood;
 
   var textEl = banner.querySelector(".wb-text");
   var iconEl = banner.querySelector(".wb-icon");
