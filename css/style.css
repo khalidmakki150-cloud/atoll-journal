@@ -466,9 +466,11 @@ section{ padding: var(--sp-7) 0; }
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--paper);
+  color: var(--ink);
   font-size: 1.05rem;
   transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
+.welcome-form input[type="text"]::placeholder{ color: var(--ink-soft); opacity: 0.6; }
 .welcome-form input[type="text"]:focus{
   outline: none;
   border-color: var(--lagoon);
